@@ -1,4 +1,4 @@
-/*
+
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
@@ -16,28 +16,22 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-*/
-
-
+//-------------------NEED TO WRITE THE FUNCTION TO PULL EVERYTHING TOGEHTER--------------------//
 
 //-------------------set variables for possible Password options --------//
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-///////////////////////////var  lowerRandom = lowerCase[Math.floor(Math.random()*lowerCase.length)];
-///////////////////////////console.log(lowerRandom);
 
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-var numeric = "1234567890";
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+var numeric = ["1","2","3","4","5","6","7","8","9","0"];
 
 var special = ["\\","!","\"","\#","$","%","\&", "\'", "(",")","*","+","\,", "-"," ",".", "\/",":", ";", "<","=",">","?","@","[","\]","^","_","\`","{","|","}","~"];
-//var special = " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ "
 
-var password
 
-//---------------------Need to set the function BUT NOT SURE HOW---------//
-/////////let generatePassword = function() {
+//---------------------Ask for length of password -----------------------//
 
-//---------------------Getting the question to ask for a password length
+//-------------------------------------------------------------------------------------HOW CAN I GET TO LOOP BACK IF THE ANSWER IS OUT OF BOUNDS
 
 let charLen = prompt("Please select length of password (Between 8 and 128 characters)");
 
@@ -46,8 +40,8 @@ if(charLen < 8 || charLen > 128) {
 } 
 
 
+//---------------------Asking if password should have LowerCase (Y/N)------//
 
-//---------------------Asking if password should have LowerCase (Y/N)
 let Lower = confirm("Do you want to include LowerCase?")
 
 if (Lower === true) {
@@ -55,7 +49,9 @@ if (Lower === true) {
  } else {("Your password will NOT include LowerCase Letters.");
 }
 
-//---------------------Asking if password should have UpperCase (Y/N)
+
+//---------------------Asking if password should have UpperCase (Y/N)------//
+
 let Upper = confirm("Do you want to include UpperCase?")
 
 if (Upper === true) {
@@ -63,7 +59,9 @@ if (Upper === true) {
  } else {("Your password will NOT include UpperCase Letters.");
 }
 
-//---------------------Asking if password should have Numbers (Y/N)
+
+//---------------------Asking if password should have Numbers (Y/N)------//
+
 let Num = confirm("Do you want to include Numbers?")
 
 if (Num === true) {
@@ -71,7 +69,9 @@ if (Num === true) {
  } else {("Your password will NOT include Numbers.");
 }
 
-//---------------------Asking if password should have Special Character (Y/N)
+
+//---------------------Asking if password should have Special Character (Y/N)------//
+
 let specChar = confirm("Do you want to include Special Characters?")
 
 if (specChar === true) {
@@ -79,32 +79,42 @@ if (specChar === true) {
  } else {("Your password will NOT include Special Character.");
 }
 
-///-------- If Lower = true, then we add lowerCase to password variable
+
+//-------- If Lower = true, then we add lowerCase to password variable
+//---------------------------------------------------------------------------------------How can I prevent UNDEFINED?????? 
 
 if (Lower === true) {
-  password = (lowerCase);
-} 
+  var characters = lowerCase.join('');
+}
 
 
-///-------- If Upper = true, then we add upperCase to passsword variable 
+//-------- If Upper = true, then we add upperCase to passsword variable 
+
 if (Upper === true) {
-  password = (password+upperCase);
+  var characters = (characters + upperCase.join(''));
 }
 
-///-------- If Num = true, then we add numeric to password variable
+
+//-------- If Num = true, then we add numeric to password variable
+
 if (Num === true){
-  password = (password+numeric);
+  var characters = (characters + numeric.join(''));
 }
 
-console.log(password);
 
-///-------- If specChar = true, then we add special to password variable
+//-------- If specChar = true, then we add special to password variable
+
 if (specChar === true) {
-  password = (password+special);
+  var characters = (characters + special.join(''));
 }
 
-///-------- after we have our password variable, we can set a random loop 1 through charLen
 
 
+//characters are defined 
+console.log(characters);
+
+//charLen is definited
+console.log(charLen);
 
 
+//-------- after we have our password variable, we can set a random loop 1 through charLen
