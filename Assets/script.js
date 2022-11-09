@@ -21,21 +21,19 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //-------------------set variables for possible Password options --------//
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+///////////////////////////var  lowerRandom = lowerCase[Math.floor(Math.random()*lowerCase.length)];
+///////////////////////////console.log(lowerRandom);
 
-var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-var numeric = [1,2,3,4,5,6,7,8,9,0];
+var numeric = "1234567890";
 
-var spec = ["\\","!","\"","\#","$","%","\&", "\'", "(",")","*","+","\,", "-"," ",".", "\/",":", ";", "<","=",">","?","@","[","\]","^","_","\`","{","|","}","~"];
+var special = ["\\","!","\"","\#","$","%","\&", "\'", "(",")","*","+","\,", "-"," ",".", "\/",":", ";", "<","=",">","?","@","[","\]","^","_","\`","{","|","}","~"];
+//var special = " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ "
 
-var password 
+var password
 
-
-
-
-
-/*
 //---------------------Need to set the function BUT NOT SURE HOW---------//
 /////////let generatePassword = function() {
 
@@ -82,15 +80,31 @@ if (specChar === true) {
 }
 
 ///-------- If Lower = true, then we add lowerCase to password variable
+
+if (Lower === true) {
+  password = (lowerCase);
+} 
+
+
 ///-------- If Upper = true, then we add upperCase to passsword variable 
-///-------- If Num = true, then we add numeric to password variable 
+if (Upper === true) {
+  password = (password+upperCase);
+}
+
+///-------- If Num = true, then we add numeric to password variable
+if (Num === true){
+  password = (password+numeric);
+}
+
+console.log(password);
+
 ///-------- If specChar = true, then we add special to password variable
-
-
+if (specChar === true) {
+  password = (password+special);
+}
 
 ///-------- after we have our password variable, we can set a random loop 1 through charLen
 
 
 
 
-*/
