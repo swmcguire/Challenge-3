@@ -17,6 +17,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //-------------------NEED TO WRITE THE FUNCTION TO PULL EVERYTHING TOGEHTER--------------------//
+//-------------------ALSO NEED TO SET IT UP SO WHEN I PUSH THE BUTTON IT STARTS THE EVENT, NOT THE PAGE LOAD-------------//
 
 //-------------------set variables for possible Password options --------//
 
@@ -33,16 +34,18 @@ var special = ["\\","!","\"","\#","$","%","\&", "\'", "(",")","*","+","\,", "-",
 
 //-------------------------------------------------------------------------------------HOW CAN I GET TO LOOP BACK IF THE ANSWER IS OUT OF BOUNDS
 
-let charLen = prompt("Please select length of password (Between 8 and 128 characters)");
+var charLen = prompt("Please select length of password (Between 8 and 128 characters)");
 
-if(charLen < 8 || charLen > 128) {
+if(charLen < 8 || charLen > 128) { ///////  figure out loop here-ish 
   alert("Please choose number between 8 and 128!")
-} 
+} else {
+  alert("Great!!! You chose " + charLen + " characters.  Just a couple more questions...");
+}
 
 
 //---------------------Asking if password should have LowerCase (Y/N)------//
 
-let Lower = confirm("Do you want to include LowerCase?")
+var Lower = confirm("Do you want to include LowerCase?")
 
 if (Lower === true) {
   alert("Your password will include LowerCase Letters.");
@@ -52,7 +55,7 @@ if (Lower === true) {
 
 //---------------------Asking if password should have UpperCase (Y/N)------//
 
-let Upper = confirm("Do you want to include UpperCase?")
+var Upper = confirm("Do you want to include UpperCase?")
 
 if (Upper === true) {
   alert("Your password will include UpperCase Letters.");
@@ -62,7 +65,7 @@ if (Upper === true) {
 
 //---------------------Asking if password should have Numbers (Y/N)------//
 
-let Num = confirm("Do you want to include Numbers?")
+var Num = confirm("Do you want to include Numbers?")
 
 if (Num === true) {
   alert("Your password will include Numbers.");
@@ -72,7 +75,7 @@ if (Num === true) {
 
 //---------------------Asking if password should have Special Character (Y/N)------//
 
-let specChar = confirm("Do you want to include Special Characters?")
+var specChar = confirm("Do you want to include Special Characters?")
 
 if (specChar === true) {
   alert("Your password will include Special Characters.");
@@ -80,8 +83,11 @@ if (specChar === true) {
 }
 
 
+
+//--------define variable characters 
+var characters = "";
+
 //-------- If Lower = true, then we add lowerCase to password variable
-//---------------------------------------------------------------------------------------How can I prevent UNDEFINED?????? 
 
 if (Lower === true) {
   var characters = lowerCase.join('');
