@@ -22,9 +22,7 @@ https://swmcguire.github.io/Challenge-3/
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+This site will be incredibly useful if you have a hard time thinking of random passwords as well as looking for passwords that are strong.  The site will provide you many password options based on certain criteria.
 
 ![Password Generator](./Assets/03-javascript-homework-demo.png)
 

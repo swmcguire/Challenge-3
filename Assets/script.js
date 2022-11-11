@@ -9,6 +9,7 @@ function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
 
+  passwordText.value = '';
   passwordText.value = password;
 
 }
@@ -19,20 +20,20 @@ generateBtn.addEventListener("click", writePassword);
 
 //-------------------set variables for possible Password options --------//
 
-var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var numeric = ["1","2","3","4","5","6","7","8","9","0"];
-var special = ["\\","!","\"","\#","$","%","\&", "\'", "(",")","*","+","\,", "-"," ",".", "\/",":", ";", "<","=",">","?","@","[","\]","^","_","\`","{","|","}","~"];
-var charLen = " ";
-var pass = " ";
-
 function generatePassword(){
-
+  var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  var numeric = ["1","2","3","4","5","6","7","8","9","0"];
+  var special = ["\\","!","\"","\#","$","%","\&", "\'", "(",")","*","+","\,", "-"," ",".", "\/",":", ";", "<","=",">","?","@","[","\]","^","_","\`","{","|","}","~"];
+  var charLen = " ";
+  var pass = " ";
 //---------------------Ask for length of password -----------------------//
 charLen = prompt("Please select length of password (Between 8 and 128 characters)");
-if(charLen < 8 || charLen > 128) { ///////  figure out loop here-ish 
-  confirm("Please choose number between 8 and 128!")
-  return '';
+if(isNaN(charLen)){
+  return 'Please pick a Number!';
+}
+if(charLen < 8 || charLen > 128) {
+  return 'Please choose number between 8 and 128!';
 } else {
   alert("Great!!! You chose " + charLen + " characters.  Just a couple more questions...");
 }
@@ -81,14 +82,12 @@ if (Num === true){
 if (specChar === true) {
   var characters = (characters + special.join(''));
 }
-console.log(characters);
 
 //--------------------------------------- Randomize the password------//
 for (var i = 0; i < charLen; i++){
   var randomPass = Math.floor(Math.random()*characters.length);
   pass += characters.substring(randomPass, randomPass +1);
 }
-console.log(pass);
 
 return pass;
 
