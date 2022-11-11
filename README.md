@@ -3,8 +3,6 @@ Challenge 3 - Random Password Generator
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
 Due to the ongoing needs of security in the work place I was tasked to create an application that allows employees to generate random passwords based on a set of criteria that they chose.  Employees are given a set of criterion to select for: 
 
 -Length between 8 and 128
