@@ -26,11 +26,9 @@ var special = ["\\","!","\"","\#","$","%","\&", "\'", "(",")","*","+","\,", "-",
 var charLen = " ";
 var pass = " ";
 
-//---------------------Ask for length of password -----------------------//
-
-//-------------------------------------------------------------------------------------HOW CAN I GET TO LOOP BACK IF THE ANSWER IS OUT OF BOUNDS
 function generatePassword(){
 
+//---------------------Ask for length of password -----------------------//
 charLen = prompt("Please select length of password (Between 8 and 128 characters)");
 if(charLen < 8 || charLen > 128) { ///////  figure out loop here-ish 
   confirm("Please choose number between 8 and 128!")
